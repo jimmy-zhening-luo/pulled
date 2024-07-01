@@ -1,21 +1,21 @@
 {
-  "name": "{PACKAGE}",
+  "name": "pulled",
   "version": "0.0.0",
-  "description": "",
+  "description": "Sync new versions of templates for 'package.json', 'tsconfig.json', and '.gitignore'.",
   "keywords": [],
   "license": "MIT",
   "type": "module",
-  "private": true,
+  "private": false,
   "config": {
     "PACKAGE_JSON_VERSION": "20.4.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jimmy-zhening-luo/{REPO}.git"
+    "url": "git+https://github.com/jimmy-zhening-luo/pulled.git"
   },
-  "homepage": "https://github.com/jimmy-zhening-luo/{REPO}#readme",
+  "homepage": "https://github.com/jimmy-zhening-luo/pulled#readme",
   "bugs": {
-    "url": "https://github.com/jimmy-zhening-luo/{REPO}/issues"
+    "url": "https://github.com/jimmy-zhening-luo/pulled/issues"
   },
   "author": {
     "name": "Jimmy Zhening Luo",
@@ -44,9 +44,6 @@
     "lint": "(npm run lint:cfg) && (npm run lint:src) && (npm run --if-present lint:ci) && (npm run --if-present lint:svelte)",
     "lint:cfg": "npm run e -- package.json tsconfig.json eslint.config.js",
     "lint:src": "npm run e -- src/**/*.ts",
-    "lint:ci": "npm run e -- .github/workflows/*.yml",
-    "lint:svelte": "(npm run e -- svelte.config.js vite.config.ts) && (npm run e -- src/**/*.svelte src/**/*.html)",
-    "check": "(svelte-kit sync) && (svelte-check --tsconfig ./tsconfig.json)",
     "prebuild": "(npm run --if-present check) && (npm run lint)",
     "build": "tsc",
     "pretest": "npm run build",
